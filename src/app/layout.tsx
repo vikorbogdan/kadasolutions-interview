@@ -13,7 +13,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={generalSans.className}>{children}</body>
+      <body className={`${generalSans.className} bg-gray-100`}>{children}</body>
     </html>
   );
 }
