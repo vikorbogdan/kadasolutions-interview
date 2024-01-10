@@ -1,5 +1,5 @@
 "use client";
-import useInfiniteProductsQuery from "@/app/hooks/useInfiniteProductsQuery";
+import useInfiniteProductsQuery from "@/hooks/useInfiniteProductsQuery";
 import LoadingSpinner from "@/components/LoadingSpinner";
 import Product from "@/types/product";
 import { useIntersection } from "@mantine/hooks";

@@ -1,6 +1,6 @@
 import { ShoppingBasket } from "lucide-react";
 import type { Metadata } from "next";
-import generalSans from "./fonts/generalSans";
+import generalSans from "../fonts/generalSans";
 import "./globals.css";
 import Providers from "./providers";
 import Button from "@/components/Button";
