@@ -1,4 +1,4 @@
-import Product from "@/types/product"
+import { Product } from "@/store/server/products/interfaces"
 
 interface ProductListItemDetailsProps {
   product: Product

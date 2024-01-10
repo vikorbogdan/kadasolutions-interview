@@ -6,7 +6,7 @@ import Header from "@/components/Header"
 import { getServerSession } from "next-auth"
 import { authOptions } from "./api/auth/[...nextauth]/route"
 import SessionProvider from "./SessionProvider"
-
+import { Toaster } from "react-hot-toast"
 export const metadata: Metadata = {
   title: "Products Page",
   description:
@@ -25,8 +25,9 @@ export default async function RootLayout({
         <SessionProvider session={session}>
           <Providers>
             <Header />
-            <main className="flex h-full items-center justify-center">
+            <main className="flex h-full items-center justify-center pt-16 lg:pt-24">
               {children}
+              <Toaster />
             </main>
           </Providers>
         </SessionProvider>

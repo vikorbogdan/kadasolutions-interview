@@ -1,4 +1,4 @@
-interface Product {
+export interface Product {
   id: number
   title: string
   description: string
@@ -12,4 +12,6 @@ interface Product {
   images: string[]
 }
 
-export default Product
+export interface ProductWithQuantity extends Product {
+  quantity: number
+}

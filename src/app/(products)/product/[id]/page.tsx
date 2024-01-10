@@ -1,30 +1,26 @@
 "use client"
 import LoadingSpinner from "@/components/LoadingSpinner"
-import Product from "@/types/product"
 import { useQuery } from "@tanstack/react-query"
 import { useParams } from "next/navigation"
 import ProductDetailsImageCarousel from "./_components/ProductDetailsImageCarousel/ProductDetailsImageCarousel"
 import ProductDetailsRatingDisplay from "./_components/ProductDetailsRatingDisplay"
 import Button from "@/components/Button"
+import { useGetProduct } from "@/store/server/products/queries"
+import AddToCartButton from "./_components/AddToCartButton"
 
 const ProductPage = () => {
   const { id: productId } = useParams()
   const { data: productDetailsData, isLoading: isProductDetailsLoading } =
-    useQuery({
-      queryKey: ["product-details", productId],
-      queryFn: async (): Promise<Product> => {
-        const res = await fetch(`https://dummyjson.com/products/${productId}`)
-        return res.json()
-      },
-    })
+    useGetProduct(Number(productId))
+
   if (isProductDetailsLoading || !productDetailsData)
     return (
-      <div className="mt-16 lg:mt-64">
+      <div>
         <LoadingSpinner />
       </div>
     )
   return (
-    <div className="flex flex-col lg:flex-row mt-16 lg:mt-64 w-full h-full lg:gap-16 max-w-7xl">
+    <div className="flex flex-col p-3 lg:mt-40 lg:flex-row w-full h-full lg:gap-16 max-w-7xl">
       <ProductDetailsImageCarousel images={productDetailsData.images} />
       <div className="py-4 w-full lg:w-1/2">
         <div className="flex flex-col md:flex-row items-center">
@@ -47,13 +43,11 @@ const ProductPage = () => {
           <div className="font-medium text-white text-lg bg-primary py-1 px-3 my-6 rounded-full">
             {productDetailsData.discountPercentage}%
           </div>
-          <div className="flex items-center justify-between w-full">
+          <div className="flex items-center justify-around md:justify-between w-full">
             <div className="font-semibold text-2xl md:text-6xl">
               {productDetailsData.price} $
             </div>
-            <Button className="py-2 md:py-5 px-10 md:px-20 text-xl md:text-3xl">
-              Add to Cart
-            </Button>
+            <AddToCartButton product={productDetailsData} />
           </div>
         </div>
       </div>

@@ -1,10 +1,10 @@
 "use client"
-import useInfiniteProductsQuery from "@/hooks/useInfiniteProductsQuery"
 import LoadingSpinner from "@/components/LoadingSpinner"
-import Product from "@/types/product"
+import { Product } from "@/store/server/products/interfaces"
 import { useIntersection } from "@mantine/hooks"
 import { useEffect, useRef } from "react"
 import ProductListItem from "./ProductListItem"
+import { useGetProducts } from "@/store/server/products/queries"
 
 const ProductList = () => {
   const {
@@ -13,7 +13,7 @@ const ProductList = () => {
     isFetchingNextPage,
     isLoading,
     hasNextPage,
-  } = useInfiniteProductsQuery(10)
+  } = useGetProducts(10)
   const lastItemRef = useRef<HTMLElement>(null)
   const { ref, entry } = useIntersection({
     root: lastItemRef.current,
@@ -25,7 +25,7 @@ const ProductList = () => {
 
   if (isLoading) {
     return (
-      <div className="mt-16 lg:mt-64">
+      <div className="">
         <LoadingSpinner />
       </div>
     )
