@@ -2,6 +2,8 @@ import Product from "@/types/product";
 import Link from "next/link";
 import ProductListItemDetails from "./ProductListItemDetails";
 import ProductListItemThumbnail from "./ProductListItemThumbnail";
+import { cn } from "@/utils/cn";
+import { buttonVariants } from "@/components/Button";
 interface ProductListItemProps {
   product: Product;
   intersectionRef?: (element: HTMLElement | null) => void;
@@ -23,7 +25,7 @@ const ProductListItem = ({
       <ProductListItemDetails product={product} />
       <Link
         href={`/product/${product.id}`}
-        className="w-full block text-center transition-colors hover:bg-primary bg-black text-white font-medium py-2 rounded-full mt-3"
+        className={cn(buttonVariants.black, "w-full py-2 mt-3")}
       >
         See details
       </Link>
