@@ -1,12 +1,14 @@
-import type { Metadata } from "next";
-import "./globals.css";
-import generalSans from "./fonts/generalSans";
 import { ShoppingBasket } from "lucide-react";
+import type { Metadata } from "next";
+import generalSans from "./fonts/generalSans";
+import "./globals.css";
+import Providers from "./providers";
 
 export const metadata: Metadata = {
   title: "Products Page",
   description: "",
 };
+
 export default function RootLayout({
   children,
 }: {
@@ -34,7 +36,7 @@ export default function RootLayout({
           </div>
         </header>
         <main className="flex h-full items-center justify-center">
-          {children}
+          <Providers>{children}</Providers>
         </main>
       </body>
     </html>
