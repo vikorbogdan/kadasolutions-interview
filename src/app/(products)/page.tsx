@@ -1,4 +1,4 @@
-import ProductList from "./_components/ProductList";
+import ProductList from "./_components/ProductList"
 
 const ProductsPage = () => {
   return (
@@ -6,7 +6,7 @@ const ProductsPage = () => {
       <h1 className="text-5xl text-center font-semibold">See Products</h1>
       <ProductList />
     </div>
-  );
-};
+  )
+}
 
-export default ProductsPage;
+export default ProductsPage

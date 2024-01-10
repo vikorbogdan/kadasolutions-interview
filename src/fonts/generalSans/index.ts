@@ -1,4 +1,4 @@
-import localFont from "next/font/local";
+import localFont from "next/font/local"
 
 const generalSans = localFont({
   src: [
@@ -19,6 +19,6 @@ const generalSans = localFont({
     },
   ],
   display: "swap",
-});
+})
 
-export default generalSans;
+export default generalSans

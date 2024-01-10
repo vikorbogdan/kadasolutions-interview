@@ -1,12 +1,12 @@
-import Product from "@/types/product";
-import Link from "next/link";
-import ProductListItemDetails from "./ProductListItemDetails";
-import ProductListItemThumbnail from "./ProductListItemThumbnail";
-import { cn } from "@/utils/cn";
-import { buttonVariants } from "@/components/Button";
+import Product from "@/types/product"
+import Link from "next/link"
+import ProductListItemDetails from "./ProductListItemDetails"
+import ProductListItemThumbnail from "./ProductListItemThumbnail"
+import { cn } from "@/utils/cn"
+import { buttonVariants } from "@/components/Button"
 interface ProductListItemProps {
-  product: Product;
-  intersectionRef?: (element: HTMLElement | null) => void;
+  product: Product
+  intersectionRef?: (element: HTMLElement | null) => void
 }
 
 const ProductListItem = ({
@@ -30,7 +30,7 @@ const ProductListItem = ({
         See details
       </Link>
     </div>
-  );
-};
+  )
+}
 
-export default ProductListItem;
+export default ProductListItem

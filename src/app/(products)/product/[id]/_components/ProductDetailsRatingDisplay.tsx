@@ -1,7 +1,7 @@
-import RatingStars from "@/components/RatingStars";
+import RatingStars from "@/components/RatingStars"
 
 interface ProductDetailsRatingDisplayProps {
-  rating: number;
+  rating: number
 }
 
 const ProductDetailsRatingDisplay = ({
@@ -14,7 +14,7 @@ const ProductDetailsRatingDisplay = ({
       </div>
       <div className="font-semibold text-2xl">{rating}</div>
     </div>
-  );
-};
+  )
+}
 
-export default ProductDetailsRatingDisplay;
+export default ProductDetailsRatingDisplay

@@ -1,7 +1,7 @@
-import Product from "@/types/product";
+import Product from "@/types/product"
 
 interface ProductListItemDetailsProps {
-  product: Product;
+  product: Product
 }
 
 const ProductListItemDetails = ({ product }: ProductListItemDetailsProps) => {
@@ -13,7 +13,7 @@ const ProductListItemDetails = ({ product }: ProductListItemDetailsProps) => {
       </div>
       <p className="max-w-48 line-clamp-2">{product.description}</p>
     </>
-  );
-};
+  )
+}
 
-export default ProductListItemDetails;
+export default ProductListItemDetails

@@ -1,10 +1,10 @@
-import { Transition } from "@headlessui/react";
-import Image from "next/image";
+import { Transition } from "@headlessui/react"
+import Image from "next/image"
 
 interface CarouselImageProps {
-  images: string[];
-  currentImageIndex: number;
-  handleClick: (value: any) => void;
+  images: string[]
+  currentImageIndex: number
+  handleClick: (value: any) => void
 }
 
 const CarouselImage = ({
@@ -29,7 +29,7 @@ const CarouselImage = ({
       fill
       src={image}
     />
-  ));
-};
+  ))
+}
 
-export default CarouselImage;
+export default CarouselImage

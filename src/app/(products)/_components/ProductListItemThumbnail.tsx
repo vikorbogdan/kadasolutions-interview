@@ -1,8 +1,8 @@
-import Image from "next/image";
+import Image from "next/image"
 
 interface ProductListItemThumbnailProps {
-  thumbnail: string;
-  discountPercentage: number;
+  thumbnail: string
+  discountPercentage: number
 }
 
 const ProductListItemThumbnail = ({
@@ -23,7 +23,7 @@ const ProductListItemThumbnail = ({
         alt="placeholder img"
       />
     </div>
-  );
-};
+  )
+}
 
-export default ProductListItemThumbnail;
+export default ProductListItemThumbnail

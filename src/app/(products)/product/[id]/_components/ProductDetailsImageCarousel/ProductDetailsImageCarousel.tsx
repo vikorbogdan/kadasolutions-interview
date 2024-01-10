@@ -1,27 +1,27 @@
-import { ChevronLeft, ChevronRight, Circle } from "lucide-react";
-import { useState } from "react";
-import CarouselFullImageModal from "./components/CarouselFullImageModal";
-import CarouselImage from "./components/CarouselImage";
+import { ChevronLeft, ChevronRight, Circle } from "lucide-react"
+import { useState } from "react"
+import CarouselFullImageModal from "./components/CarouselFullImageModal"
+import CarouselImage from "./components/CarouselImage"
 
 interface ProductDetailsImageCarouselProps {
-  images: string[];
+  images: string[]
 }
 
 const ProductDetailsImageCarousel = ({
   images,
 }: ProductDetailsImageCarouselProps) => {
-  const [currentImageIndex, setCurrentImageIndex] = useState(0);
-  const [isFullImageModalOpen, setIsFullImageModalOpen] = useState(false);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0)
+  const [isFullImageModalOpen, setIsFullImageModalOpen] = useState(false)
 
   const handleNext = () => {
-    if (currentImageIndex === images.length - 1) return;
-    setCurrentImageIndex((prev) => prev + 1);
-  };
+    if (currentImageIndex === images.length - 1) return
+    setCurrentImageIndex((prev) => prev + 1)
+  }
 
   const handlePrevious = () => {
-    if (currentImageIndex === 0) return;
-    setCurrentImageIndex((prev) => prev - 1);
-  };
+    if (currentImageIndex === 0) return
+    setCurrentImageIndex((prev) => prev - 1)
+  }
 
   return (
     <>
@@ -70,7 +70,7 @@ const ProductDetailsImageCarousel = ({
         </div>
       </div>
     </>
-  );
-};
+  )
+}
 
-export default ProductDetailsImageCarousel;
+export default ProductDetailsImageCarousel

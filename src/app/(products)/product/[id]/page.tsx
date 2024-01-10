@@ -1,28 +1,28 @@
-"use client";
-import LoadingSpinner from "@/components/LoadingSpinner";
-import Product from "@/types/product";
-import { useQuery } from "@tanstack/react-query";
-import { useParams } from "next/navigation";
-import ProductDetailsImageCarousel from "./_components/ProductDetailsImageCarousel/ProductDetailsImageCarousel";
-import ProductDetailsRatingDisplay from "./_components/ProductDetailsRatingDisplay";
-import Button from "@/components/Button";
+"use client"
+import LoadingSpinner from "@/components/LoadingSpinner"
+import Product from "@/types/product"
+import { useQuery } from "@tanstack/react-query"
+import { useParams } from "next/navigation"
+import ProductDetailsImageCarousel from "./_components/ProductDetailsImageCarousel/ProductDetailsImageCarousel"
+import ProductDetailsRatingDisplay from "./_components/ProductDetailsRatingDisplay"
+import Button from "@/components/Button"
 
 const ProductPage = () => {
-  const { id: productId } = useParams();
+  const { id: productId } = useParams()
   const { data: productDetailsData, isLoading: isProductDetailsLoading } =
     useQuery({
       queryKey: ["product-details", productId],
       queryFn: async (): Promise<Product> => {
-        const res = await fetch(`https://dummyjson.com/products/${productId}`);
-        return res.json();
+        const res = await fetch(`https://dummyjson.com/products/${productId}`)
+        return res.json()
       },
-    });
+    })
   if (isProductDetailsLoading || !productDetailsData)
     return (
       <div className="mt-16 lg:mt-64">
-        <LoadingSpinner />;
+        <LoadingSpinner />
       </div>
-    );
+    )
   return (
     <div className="flex flex-col lg:flex-row mt-16 lg:mt-64 w-full h-full lg:gap-16 max-w-7xl">
       <ProductDetailsImageCarousel images={productDetailsData.images} />
@@ -58,7 +58,7 @@ const ProductPage = () => {
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default ProductPage;
+export default ProductPage

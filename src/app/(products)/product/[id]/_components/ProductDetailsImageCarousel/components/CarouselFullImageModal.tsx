@@ -1,15 +1,15 @@
-import Button from "@/components/Button";
-import { Dialog } from "@headlessui/react";
-import Image from "next/image";
+import Button from "@/components/Button"
+import { Dialog } from "@headlessui/react"
+import Image from "next/image"
 
 const CarouselFullImageModal = ({
   image,
   isOpen,
   setIsOpen,
 }: {
-  image: string;
-  isOpen: boolean;
-  setIsOpen: (isOpen: boolean) => void;
+  image: string
+  isOpen: boolean
+  setIsOpen: (isOpen: boolean) => void
 }) => {
   return (
     <Dialog
@@ -38,7 +38,7 @@ const CarouselFullImageModal = ({
         </div>
       </div>
     </Dialog>
-  );
-};
+  )
+}
 
-export default CarouselFullImageModal;
+export default CarouselFullImageModal
