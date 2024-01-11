@@ -12,7 +12,7 @@ const ProductListItemThumbnail = ({
   return (
     <div className="w-72 h-36 relative">
       {discountPercentage !== 0 && (
-        <span className="absolute z-40 right-2 top-2 font-medium text-white text-sm bg-primary py-1 px-3 rounded-full">
+        <span className="absolute z-10 right-2 top-2 font-medium text-white text-sm bg-primary py-1 px-3 rounded-full">
           {discountPercentage}%
         </span>
       )}
