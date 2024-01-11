@@ -1,9 +1,10 @@
 import Button from "@/components/Button"
 import LoadingSpinner from "@/components/LoadingSpinner"
-import { Dialog } from "@headlessui/react"
-import { X } from "lucide-react"
-import { signIn, useSession } from "next-auth/react"
+import { useCartStore } from "@/store/client/useStore"
+import { addPurchase } from "@/store/server/purchases/mutations"
+import { useSession } from "next-auth/react"
 import { useState } from "react"
+import toast from "react-hot-toast"
 import CartSignInDialog from "./CartSignInDialog"
 
 const CartPurchaseButtonContent = ({
@@ -18,9 +19,15 @@ const CartPurchaseButtonContent = ({
 const CartPurchaseButton = () => {
   const { status: sessionStatus } = useSession()
   const [isSignInDialogOpen, setIsSignInDialogOpen] = useState(false)
-  const handleClick = () => {
+  const { products, clearCart } = useCartStore()
+  const handleClick = async () => {
     if (sessionStatus === "unauthenticated") {
       setIsSignInDialogOpen(true)
+    }
+    if (sessionStatus === "authenticated") {
+      await addPurchase(products)
+      toast.success("Purchase successful")
+      clearCart()
     }
   }
   return (
