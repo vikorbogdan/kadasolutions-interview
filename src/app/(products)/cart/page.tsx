@@ -6,6 +6,7 @@ import { useEffect, useState } from "react"
 import CartDetailsTable from "./_components/CartDetailsTable"
 import CartIsEmpty from "./_components/CartIsEmpty"
 import CartProductList from "./_components/CartProductList"
+import CartPurchaseButton from "./_components/CartPurchaseButton"
 
 const CartPage = () => {
   const { products, clearCart } = useCartStore()
@@ -26,7 +27,7 @@ const CartPage = () => {
         </h1>
         <CartDetailsTable products={productsToDisplay} />
         <div className="w-full flex flex-col items-center gap-2">
-          <Button className="py-5 w-full text-3xl">Purchase</Button>
+          <CartPurchaseButton />
           <Button
             variant="destructive"
             onClick={clearCart}

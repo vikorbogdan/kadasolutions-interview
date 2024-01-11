@@ -1,4 +1,4 @@
-import ProductList from "./_components/ProductList"
+import ProductList from "./product/_components/ProductList"
 
 const ProductsPage = () => {
   return (
