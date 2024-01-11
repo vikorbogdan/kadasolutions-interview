@@ -14,7 +14,7 @@ export const buttonVariants = {
 const Button = ({ variant, children, className, ...props }: ButtonProps) => {
   return (
     <button
-      className={cn(className, buttonVariants[variant ?? "black"])}
+      className={cn(buttonVariants[variant ?? "black"], className)}
       {...props}
     >
       {children}
