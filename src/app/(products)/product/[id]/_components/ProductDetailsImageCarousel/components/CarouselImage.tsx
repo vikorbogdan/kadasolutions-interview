@@ -27,6 +27,7 @@ const CarouselImage = ({
       className="object-cover cursor-pointer rounded-md"
       alt=""
       fill
+      sizes="50%"
       src={image}
     />
   ))

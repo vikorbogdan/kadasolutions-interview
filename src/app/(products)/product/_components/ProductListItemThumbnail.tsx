@@ -19,6 +19,7 @@ const ProductListItemThumbnail = ({
       <Image
         className="rounded-md object-cover"
         fill
+        sizes="50%"
         src={thumbnail}
         alt="placeholder img"
       />
