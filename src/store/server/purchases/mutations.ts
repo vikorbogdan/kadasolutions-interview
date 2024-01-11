@@ -12,9 +12,12 @@ export const addPurchase = async (items: ProductWithQuantity[]) => {
   const querySnapshot = await getDocs(q)
   const userRef = querySnapshot.docs[0].ref
 
-  const purchaseRef = await addDoc(collection(db, "purchases"), {
-    items,
-    userId: userRef.id,
-  })
+  const purchaseRef = await addDoc(
+    collection(db, "users", userRef.id, "purchases"),
+    {
+      timestamp: Date.now(),
+      items,
+    }
+  )
   return purchaseRef.id
 }
