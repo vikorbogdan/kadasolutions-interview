@@ -2,6 +2,7 @@ import { ChevronLeft, ChevronRight, Circle } from "lucide-react"
 import { useState } from "react"
 import CarouselFullImageModal from "./components/CarouselFullImageModal"
 import CarouselImage from "./components/CarouselImage"
+import CarouselNavigationDots from "./components/CarouselNavigationDots"
 
 interface ProductDetailsImageCarouselProps {
   images: string[]
@@ -55,19 +56,11 @@ const ProductDetailsImageCarousel = ({
             <ChevronRight className="text-secondary/60 w-full h-7" />
           </button>
         </div>
-        <div className="gap-3 flex">
-          {images.map((image, idx) => (
-            <button key={image} onClick={() => setCurrentImageIndex(idx)}>
-              <Circle
-                className={`w-2 h-2 ${
-                  idx === currentImageIndex
-                    ? "fill-primary"
-                    : "fill-secondary/60 hover:fill-secondary/80"
-                } stroke-none`}
-              />
-            </button>
-          ))}
-        </div>
+        <CarouselNavigationDots
+          index={currentImageIndex}
+          setIndex={setCurrentImageIndex}
+          images={images}
+        />
       </div>
     </>
   )
