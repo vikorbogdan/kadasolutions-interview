@@ -4,7 +4,7 @@ import "./globals.css"
 import Providers from "./providers"
 import Header from "@/components/Header"
 import { getServerSession } from "next-auth"
-import { authOptions } from "./api/auth/[...nextauth]/route"
+import { authOptions } from "@/utils/authOptions"
 import SessionProvider from "./SessionProvider"
 import { Toaster } from "react-hot-toast"
 export const metadata: Metadata = {
