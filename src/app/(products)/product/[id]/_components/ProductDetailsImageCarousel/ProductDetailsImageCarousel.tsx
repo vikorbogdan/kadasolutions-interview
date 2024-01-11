@@ -1,4 +1,4 @@
-import { ChevronLeft, ChevronRight, Circle } from "lucide-react"
+import { ChevronLeft, ChevronRight } from "lucide-react"
 import { useState } from "react"
 import CarouselFullImageModal from "./components/CarouselFullImageModal"
 import CarouselImage from "./components/CarouselImage"
